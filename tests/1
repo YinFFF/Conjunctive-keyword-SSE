@@ -1,0 +1,53 @@
+================= file_num: 1000 ====================
+old solution
+Filename: test_csse.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    34     28.6 MiB     28.6 MiB           1   @profile
+    35                                         def print_memroy():
+    36     28.6 MiB      0.0 MiB           1     return
+
+
+index build time: 11.334852933883667
+search_result: []
+query time: 0.017267942428588867
+Filename: test_csse.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    34    183.6 MiB    183.6 MiB           1   @profile
+    35                                         def print_memroy():
+    36    183.6 MiB      0.0 MiB           1     return
+
+
+new solution
+Filename: test_csse.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    34     67.3 MiB     67.3 MiB           1   @profile
+    35                                         def print_memroy():
+    36     67.3 MiB      0.0 MiB           1     return
+
+
+Traceback (most recent call last):
+  File "test_csse.py", line 117, in <module>
+    test_new_solution(file_vec_list, query_keywords_index, dic_num)
+  File "test_csse.py", line 42, in test_new_solution
+    scheme = csse.NewSolution(file_vec_list)
+  File "/mnt/hgfs/share/fhipe/csse/csse.py", line 69, in __init__
+    self.enc_vec_list[i] = self.shve_scheme.Enc(self.enc_vec_list[i])
+  File "/mnt/hgfs/share/fhipe/shve/shve.py", line 100, in Enc
+    c.append(PRF(self.msk, x[i].to_bytes(1, 'big') + i.to_bytes((i.bit_length() + 7) // 8, 'big')))
+  File "/mnt/hgfs/share/fhipe/shve/shve.py", line 40, in PRF
+    encryptor = cipher.encryptor()
+  File "/usr/lib/python3/dist-packages/cryptography/hazmat/primitives/ciphers/base.py", line 121, in encryptor
+    self.algorithm, self.mode
+  File "/usr/lib/python3/dist-packages/cryptography/hazmat/backends/openssl/backend.py", line 269, in create_symmetric_encryption_ctx
+    return _CipherContext(self, cipher, mode, _CipherContext._ENCRYPT)
+  File "/usr/lib/python3/dist-packages/cryptography/hazmat/backends/openssl/ciphers.py", line 58, in __init__
+    if isinstance(mode, modes.ModeWithInitializationVector):
+  File "/usr/lib/python3.6/abc.py", line 184, in __instancecheck__
+    if subclass in cls._abc_cache:
+KeyboardInterrupt

@@ -1,0 +1,6 @@
+[submodule "flint2"]
+	path = flint
+	url = https://github.com/wbhart/flint2.git
+[submodule "charm"]
+	path = charm
+	url = https://github.com/JHUISI/charm
